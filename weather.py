@@ -54,28 +54,28 @@ def get_weather(city_name):
             temp = forecast['main']['temp']
             
             if 6 <= hour < 12:
-                day_forecast["Tong"] = f"☀️ +{int(temp)}°"
+                day_forecast["Tong"] = f"🌅 Tong: +{int(temp)}°C"
             elif 12 <= hour < 18:
-                day_forecast["Kun"] = f"☀️ +{int(temp)}°"
+                day_forecast["Kun"] = f"🌞 Kun: +{int(temp)}°C"
             elif 18 <= hour < 24:
-                day_forecast["Oqshom"] = f"☁️ +{int(temp)}°"
+                day_forecast["Oqshom"] = f"🌆 Oqshom: +{int(temp)}°C"
 
     # If no forecast found, use current temperature
     if not day_forecast["Tong"]:
-        day_forecast["Tong"] = f"☀️ +{int(current_temp)}°"
+        day_forecast["Tong"] = f"🌅 Tong: +{int(current_temp)}°C"
     if not day_forecast["Kun"]:
-        day_forecast["Kun"] = f"☀️ +{int(current_temp)}°"
+        day_forecast["Kun"] = f"🌞 Kun: +{int(current_temp)}°C"
     if not day_forecast["Oqshom"]:
-        day_forecast["Oqshom"] = f"☁️ +{int(current_temp)}°"
+        day_forecast["Oqshom"] = f"🌆 Oqshom: +{int(current_temp)}°C"
 
     # Moon phase (placeholder)
     def get_moon_phase(date):
-        return "Yosh oy"
+        return "🌑 Yosh oy"
 
     moon_phase = get_moon_phase(today_date)
 
     return {
-        "date": today_date.strftime("%d Avgust"),
+        "date": today_date.strftime("%d Sentabr"),
         "current_temp": int(current_temp),
         "humidity": humidity,
         "pressure": int(pressure),
@@ -85,4 +85,4 @@ def get_weather(city_name):
         "sunset": sunset,
         "moon_phase": moon_phase,
         "day_forecast": day_forecast
-}
+    }

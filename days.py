@@ -52,9 +52,10 @@ def get_weather_forecast(city_name):
     forecast_output = ""
     for i, (day, data) in enumerate(weather_forecast.items()):
         if i == 0:
-            forecast_output += f"Bugun, {data['date']}\n"
+            forecast_output += f"🌟 Bugun, {data['date']} 🌟\n"
         else:
-            forecast_output += f"{data['day_name']}, {data['date']}\n"
-        forecast_output += f"☀️ +{int(data['temp_max'])}°...+{int(data['temp_min'])}°, {data['description'].capitalize()}\n"
-        forecast_output += f"Yog‘ingarchilik ehtimoli: {int(data['rain_probability'])}%\n\n"
+            forecast_output += f"📅 {data['day_name']}, {data['date']} 📅\n"
+        forecast_output += f"🌞 Harorat: +{int(data['temp_max'])}°C...+{int(data['temp_min'])}°C\n"
+        forecast_output += f"🌀 Holat: {data['description'].capitalize()}\n"
+        forecast_output += f"🌧️ Yog‘ingarchilik ehtimoli: {int(data['rain_probability'])}%\n\n"
     return forecast_output
