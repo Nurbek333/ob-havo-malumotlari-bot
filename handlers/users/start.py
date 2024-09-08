@@ -9,6 +9,28 @@ async def start_command(message:Message):
     telegram_id = message.from_user.id
     try:
         db.add_user(full_name=full_name,telegram_id=telegram_id) #foydalanuvchi bazaga qo'shildi
-        await message.answer(text="Assalomu alaykum, Ob-Havo botimizga hush kelibsiz", reply_markup=weather_inl_button)
+        await message.answer(text=""" 👋 Salom! Men sizga ob-havo ma'lumotlarini taqdim etaman.
+        🔍 **Qanday ma'lumot olishni xohlaysiz?**
+        1️⃣ **Joriy ob-havo**: Shahar nomini kiriting, men sizga joriy ob-havo ma'lumotlarini yuboraman.
+        2️⃣ **Kunlik prognoz**: Shahar nomini kiriting va men sizga bugungi ob-havo prognozini taqdim etaman.
+        🛠 **Qo'shimcha funksiyalar**:
+        🌅 Tong, 🌞 Kun, 🌆 Oqshom uchun haroratni bilib oling.
+        🌑 Oy bosqichini aniqlang.
+        📍 **Misollar**:
+        - `Toshkent`
+        - `Navoiy`
+        - `Buxoro`
+        ❓ Savollar yoki yordam uchun /help komandasi orqali biz bilan bog'laning. """,parse_mode='Markdown', reply_markup=weather_inl_button)
     except:
-        await message.answer(text="Assalomu alaykum", reply_markup=weather_inl_button)
+        await message.answer(text="""👋 Salom! Men sizga ob-havo ma'lumotlarini taqdim etaman.
+        🔍 **Qanday ma'lumot olishni xohlaysiz?**\n
+        1️⃣ **Joriy ob-havo**: Shahar nomini kiriting, men sizga joriy ob-havo ma'lumotlarini yuboraman.
+        2️⃣ **Kunlik prognoz**: Shahar nomini kiriting va men sizga bugungi ob-havo prognozini taqdim etaman.
+        🛠 **Qo'shimcha funksiyalar**:
+        🌅 Tong, 🌞 Kun, 🌆 Oqshom uchun haroratni bilib oling.
+        🌑 Oy bosqichini aniqlang.
+        📍 **Misollar**:
+        - `Toshkent`
+        - `Navoiy`
+        - `Buxoro`
+        ❓ Savollar yoki yordam uchun /help komandasi orqali biz bilan bog'laning. """,parse_mode='Markdown', reply_markup=weather_inl_button)
